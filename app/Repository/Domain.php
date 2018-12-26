@@ -30,7 +30,7 @@ class Domain
 
         //Log::debug($cliente);
         
-        Mail::to($cliente->correo)->queue(new BuyDomainMail($cliente));
+        Mail::to($cliente["correo"])->queue(new BuyDomainMail($cliente));
 
         $nombre = $cliente["nombre"];
         $correo = $cliente["correo"];
