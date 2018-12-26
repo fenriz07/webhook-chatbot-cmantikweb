@@ -1,6 +1,6 @@
-<?php
+<?php namespace App\Repositories;
 
-namespace App\Repositories;
+use Dialogflow\Action\Responses\Suggestions;
 
 class Domain
 {
@@ -10,7 +10,13 @@ class Domain
 
         $parameters =  $agent->getParameters();
 
-        $suggestion = \Dialogflow\RichMessage\Suggestion::create(['Suggestion one', 'Suggestion two']);
+        $conv = $agent->getActionConversation();
+
+        $conv->ask("Hola el dominio $parameters->domain tiene un costo de 10$(USD). ¿Desea comprarlo?");
+
+        $conv->ask(new Suggestions(['Si', 'No']));
+
+        return $conv;
 
         return $suggestion;
 
