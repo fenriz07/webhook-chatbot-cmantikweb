@@ -1,6 +1,6 @@
 <?php namespace App\Repositories;
 
-use Dialogflow\Action\Responses\Suggestions;
+use Dialogflow\RichMessage\Suggestion;
 
 class Domain
 {
