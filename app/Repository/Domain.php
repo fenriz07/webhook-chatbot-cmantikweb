@@ -1,5 +1,6 @@
 <?php namespace App\Repositories;
 
+use Log;
 use Mail;
 use App\Mail\BuyDomainMail;
 use Dialogflow\RichMessage\Suggestion;
