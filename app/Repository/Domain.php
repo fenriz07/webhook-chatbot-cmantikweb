@@ -10,13 +10,7 @@ class Domain
 
         $parameters =  $agent->getParameters();
 
-        $conv = $agent->getActionConversation();
-
-        $conv->ask("Hola el dominio $parameters->domain tiene un costo de 10$(USD). ¿Desea comprarlo?");
-
-        $conv->ask(new Suggestions(['Si', 'No']));
-
-        return $conv;
+        $suggestion = \Dialogflow\RichMessage\Suggestion::create(['Suggestion one', 'Suggestion two'],"Hola el dominio $parameters->domain tiene un costo de 10$(USD)");
 
         return $suggestion;
 
