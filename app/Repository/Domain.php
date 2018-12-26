@@ -27,8 +27,9 @@ class Domain
 
         $cliente =  (object) $agent->getParameters();
 
-       Mail::send('emails.buyDomain',['cliente' => $cliente],function($m) use ($cliente){
+        Mail::send('emails.buyDomain',['cliente' => $cliente],function($m) use ($cliente){
             $m->to($cliente->correo,$cliente->nombre);
+            $m->from('servio@cmantikweb.com','Cmantikweb-BOT');
             $m->subject('Instrucciones para la compra de un dominio.');
         });
  
