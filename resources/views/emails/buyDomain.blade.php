@@ -1,7 +1,7 @@
-Hola {{ $cliente->nombre}} {{ $cliente->apellido }}
+Hola {{ $cliente->nombre}} {{ $cliente->apellido }} <br>
 
-Se ha reservado el {{ $cliente->dominio }} bajo la reserva <strong>#78155</strong>
+Se ha reservado el {{ $cliente->dominio }} bajo la reserva <strong>#78155</strong> <br>
 
-Para continuar sigue el siguente enlance para finalizar el proceso de compra: 
+Para continuar sigue el siguente enlance para finalizar el proceso de compra:  <br>
 
-<a href="https://cmantikweb.com">Terminar comprar.</a>
+<a href="https://cmantikweb.com">Terminar comprar.</a> <br>
