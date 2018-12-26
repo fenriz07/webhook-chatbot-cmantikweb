@@ -12,7 +12,9 @@ class Domain
 
         $parameters =  (object) $agent->getParameters();
 
-        $title   = "Hola el dominio $parameters->domain tiene un costo de 10$(USD). ¿Desea comprarlo?";
+        $price   = rand(10,2000);
+
+        $title   = "Hola el dominio $parameters->domain tiene un costo de $price $(USD). ¿Desea comprarlo?";
 
         $suggestion = Suggestion::create($options,$title);
 
