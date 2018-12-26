@@ -26,6 +26,8 @@ class Domain
     public function setDataPersonal($agent)
     {
         $cliente =  (object) $agent->getParameters();
+
+        Log::debug($cliente);
         
         Mail::to($cliente->correo)->queue(new BuyDomainMail($cliente));
 
