@@ -8,14 +8,15 @@ class Domain
     public function getPrice($agent)
     {
 
+        $options = ['Si','No'];
+
         $parameters =  (object) $agent->getParameters();
 
-        $suggestion = \Dialogflow\RichMessage\Suggestion::create(['Suggestion one', 'Suggestion two'],"Hola el dominio $parameters->domain tiene un costo de 10$(USD)");
+        $title   = "Hola el dominio $parameters->domain tiene un costo de 10$(USD). ¿Desea comprarlo?";
+
+        $suggestion = Suggestion::create($options,$title);
 
         return $suggestion;
-
-        return "Hola el dominio $parameters->domain tiene un costo de 10$(USD)";
-
     }
     
 }
