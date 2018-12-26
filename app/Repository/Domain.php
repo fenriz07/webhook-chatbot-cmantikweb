@@ -26,13 +26,17 @@ class Domain
 
     public function setDataPersonal($agent)
     {
-        $cliente =  (object) $agent->getParameters();
+        $cliente = $agent->getParameters();
 
-        Log::debug($cliente);
+        //Log::debug($cliente);
         
         Mail::to($cliente->correo)->queue(new BuyDomainMail($cliente));
 
-        return "Listo $cliente->nombre, te he enviado un correo al $cliente->correo con las instrucciones para finalizar la compra.";
+        $nombre = $cliente["nombre"];
+        $correo = $cliente["correo"];
+        $dominio = $cliente["dominio"];
+
+        return "Listo $nombre, te he enviado un correo al $correo con las instrucciones para finalizar la compra de $dominio";
     }
     
 }
