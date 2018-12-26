@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 
-Route::post('/point','HookController@point');
+Route::post('point','HookController@point');
