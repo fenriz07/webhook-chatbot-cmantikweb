@@ -27,12 +27,12 @@ class Domain
 
         $cliente =  (object) $agent->getParameters();
 
-   /*      Mail::send('emails.buyDomain',['cliente' => $cliente],function($m) use ($cliente){
+       Mail::send('emails.buyDomain',['cliente' => $cliente],function($m) use ($cliente){
             $m->to($cliente->correo,$cliente->nombre);
             $m->subject('Instrucciones para la compra de un dominio.');
         });
- */
-        return "Listo  $cliente->nombre, te he enviado un correo al $cliente->correo con las instrucciones para finalizar la compra.";
+ 
+        return "Listo $cliente->nombre, te he enviado un correo al $cliente->correo con las instrucciones para finalizar la compra.";
     }
     
 }
