@@ -1,5 +1,7 @@
 Hola {{ $cliente->nombre}} {{ $cliente->apellido }}
 
-Estas interesado en el siguente dominio: xxx 
-Para continuar realiza  un pago por xxx$
-A nuestra cuenta paypal xxx@xxx.com
+Se ha reservado el {{ $cliente->dominio }} bajo la reserva <strong>#78155</strong>
+
+Para continuar sigue el siguente enlance para finalizar el proceso de compra: 
+
+<a href="https://cmantikweb.com">Terminar comprar.</a>
