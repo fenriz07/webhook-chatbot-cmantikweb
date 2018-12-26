@@ -16,11 +16,11 @@ class BuyDomainMail extends Mailable
      *
      * @return void
      */
-    public $client;
+    public $cliente;
 
-    public function __construct($client)
+    public function __construct($cliente)
     {
-        $this->client = $client;
+        $this->cliente = $cliente;
     }
 
     /**
