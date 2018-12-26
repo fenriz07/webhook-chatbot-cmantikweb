@@ -20,5 +20,12 @@ class Domain
 
         return $suggestion;
     }
+
+    public function setDataPersonal($agent)
+    {
+        $agent->reply('Listo, te he enviado un correo con las instrucciones para finalizar la compra.');
+
+        return $agent;
+    }
     
 }
