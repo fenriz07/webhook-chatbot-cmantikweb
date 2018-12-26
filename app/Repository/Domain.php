@@ -1,6 +1,7 @@
 <?php namespace App\Repositories;
 
 use Mail;
+use App\Mail\BuyDomainMail;
 use Dialogflow\RichMessage\Suggestion;
 
 class Domain
@@ -26,13 +27,9 @@ class Domain
     {
 
         $cliente =  (object) $agent->getParameters();
+        
+        Mail::to($cliente->correo)->send(new BuyDomainMail($cliente));
 
- /*        Mail::send('emails.buyDomain',['cliente' => $cliente],function($m) use ($cliente){
-            $m->to($cliente->correo,$cliente->nombre);
-            $m->from('servio@cmantikweb.com','Cmantikweb-BOT');
-            $m->subject('Instrucciones para la compra de un dominio.');
-        }); */
- 
         return "Listo $cliente->nombre, te he enviado un correo al $cliente->correo con las instrucciones para finalizar la compra.";
     }
     
