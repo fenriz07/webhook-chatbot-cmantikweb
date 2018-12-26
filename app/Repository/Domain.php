@@ -1,5 +1,6 @@
 <?php namespace App\Repositories;
 
+use Mail;
 use Dialogflow\RichMessage\Suggestion;
 
 class Domain
@@ -23,7 +24,15 @@ class Domain
 
     public function setDataPersonal($agent)
     {
-        return 'Listo, te he enviado un correo con las instrucciones para finalizar la compra.';
+
+        $cliente =  (object) $agent->getParameters();
+
+        Mail::send('emails.buyDomain',['cliente' => $cliente],function($m) use ($cliente){
+            $m->to($cliente->correo,$cliente->nombre);
+            $m->subject('Instrucciones para la compra de un dominio.');
+        });
+
+        return "Listo  $cliente->nombre, te he enviado un correo con las instrucciones para finalizar la compra.";
     }
     
 }
