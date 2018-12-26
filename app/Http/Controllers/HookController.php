@@ -12,8 +12,10 @@ class HookController extends Controller
     public function point(Request $request)
     {
         $agent = WebhookClient::fromData($request->json()->all());
+        $intent = $agent->getIntent();
+        $parameters = $agent->getParameters();
 
-        $agent->reply('Hi, how can I help?');
+        $agent->reply("$intent" . $parameters['numero']);
 
         return response()->json($agent->render());
         //return dd($request);
