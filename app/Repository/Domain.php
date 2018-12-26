@@ -27,7 +27,7 @@ class Domain
     {
         $cliente =  (object) $agent->getParameters();
         
-        Mail::to($cliente->correo)->send(new BuyDomainMail($cliente));
+        Mail::to($cliente->correo)->queue(new BuyDomainMail($cliente));
 
         return "Listo $cliente->nombre, te he enviado un correo al $cliente->correo con las instrucciones para finalizar la compra.";
     }
