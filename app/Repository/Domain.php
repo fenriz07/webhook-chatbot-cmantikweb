@@ -23,9 +23,7 @@ class Domain
 
     public function setDataPersonal($agent)
     {
-        $agent->reply('Listo, te he enviado un correo con las instrucciones para finalizar la compra.');
-
-        return $agent;
+        return 'Listo, te he enviado un correo con las instrucciones para finalizar la compra.';
     }
     
 }
